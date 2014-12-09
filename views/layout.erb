@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+	<style type="text/css">
+		h1 {
+			color: <%= "##{@color}" %>;
+		}
+	</style>
+
+	<title >Squircles!</title>
+</head>
+<body>
+
+<h1><a href="/">Squircles!</a></h1>
+
+<form action="/multiple" method="post">
+	<input type="text" placeholder="Num Squares" value=<%= @num_squares %> name="numsquares">
+	<input type="range" min="0" max="50" value=<%= @roundness %> step="5" name="roundness" />
+	<input type="color" value="#<%= @color %>" name="color">
+
+	<input type="submit">
+</form>
+
+<%= yield %>
+
+</body>
+</html>
